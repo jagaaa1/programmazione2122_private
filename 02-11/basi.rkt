@@ -2,7 +2,7 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname basi) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 
-(require racket/string) ;questo serve per il comando a riga 56
+(require racket/string) ; questo serve per il comando a riga 56
 
 ; restituisce parte intera di un numero togliendo eventuale segno
 (define parte_intera
