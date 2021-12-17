@@ -26,34 +26,6 @@
 	)
 )
 
-
-
-#| versione precedente di (position)
-; restituisce la "sottolista" di list partendo da x
-(define sub-list
-	(lambda (x list)
-		(if (equal? x (car list))
-			list
-			(sub-list x (cdr list))
-		)
-	)
-)
-
-; restituisce la posizione di x in una lista
-(define position
-	(lambda (x list)
-		(if (belong? x list)
-			(-
-				(length list)
-				(length (sub-list x list))
-			)
-			"Non è presente nella lista"
-		)
-	)
-)
-
-|#
-
 ; inserisci x in una lista ordinata e senza ripetizioni
 (define sorted-ins
 	(lambda (x o-list)
