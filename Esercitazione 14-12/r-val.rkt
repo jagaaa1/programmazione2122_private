@@ -11,6 +11,8 @@
 	)
 )
 
+; parte frazionaria base2 --> base10 : risulato = risultato / 2 + nuova cifra
+; si parte dall'ultima cifra a destra
 (define r-val
 	(lambda (num)
 		(cond

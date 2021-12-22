@@ -2,6 +2,7 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname shared) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 
+; verifica se un numero è presente in una lista
 (define is-in?
 	(lambda (n s)
 		(cond
@@ -14,6 +15,7 @@
 	)
 )
 
+; datre due liste ORDINATE restituisce una lista ORDINATA dei numeri in comune
 (define shared
 	(lambda (s1 s2)
 		(cond

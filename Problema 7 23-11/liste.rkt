@@ -4,22 +4,22 @@
 
 ; verifica se x è prensente in una lista
 (define belong?
-	(lambda (x list)
+	(lambda (x lst)
 		(cond
-			((null? list) false)
-			((equal? x (car list)) true)
-			(else (belong? x (cdr list)))
+			((null? lst) false)
+			((equal? x (car lst)) true)
+			(else (belong? x (cdr lst)))
 		)
 	)
 )
 
 ; restituisce la posizione di x in una lista
 (define position
-	(lambda (x list)
-		(if (belong? x list)
-			(if (equal? x (car list))
+	(lambda (x lst)
+		(if (belong? x lst)
+			(if (equal? x (car lst))
 				0
-				(+ (position x (cdr list)) 1)
+				(+ (position x (cdr lst)) 1)
 			)
 			"Non è presente nella lista"
 		)
