@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=BTR
+comment0.text=\r\n\ BTR\r\n\r\n\ @author\ Jacopo\ Plozner\r\n\ @version\ 31/03/2022\r\n
+comment1.params=
+comment1.target=BTR()
+comment2.params=s
+comment2.target=BTR(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ value()
+comment4.params=
+comment4.target=BTR\ btrSucc()
+numComments=5

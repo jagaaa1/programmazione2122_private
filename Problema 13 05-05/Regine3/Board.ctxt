@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Board
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Board\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=n
+comment1.target=Board(int)
+comment2.params=b\ i\ j
+comment2.target=Board(Board,\ int,\ int)
+comment3.params=
+comment3.target=SList\ queensCo()
+comment4.params=
+comment4.target=int\ size()
+comment5.params=
+comment5.target=int\ queensOn()
+comment6.params=i\ j
+comment6.target=boolean\ underAttack(int,\ int)
+comment7.params=i\ j
+comment7.target=Board\ addQueen(int,\ int)
+comment8.params=
+comment8.target=java.lang.String\ arrangement()
+comment9.params=i\ j
+comment9.target=java.lang.String\ locCode(int,\ int)
+numComments=10

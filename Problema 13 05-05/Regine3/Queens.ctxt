@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Queens
+comment1.params=n
+comment1.target=int\ numberOfSolutions(int)
+comment1.text=\r\n\ I.\ Numero\ di\ soluzioni\:\r\n\r\n\r\n\ Il\ numero\ di\ modi\ diversi\ in\ cui\ si\ possono\ disporre\ n\ regine\r\n\r\n\ numberOfSolutions(\ n\ )\r\n\r\n\ in\ una\ scacchiera\ n\ x\ n\ e'\ dato\ dal\ numero\ di\ modi\ diversi\ in\r\n\ cui\ si\ puo'\ completare\ la\ disposizione\ delle\ regine\ a\ partire\r\n\ da\ una\ scacchiera\ n\ x\ n\ inizialmente\ vuota\r\n\r\n\ numberOfCompletions(\ new\ Board(n)\ )\r\n
+comment2.params=b
+comment2.target=int\ numberOfCompletions(Board)
+comment2.text=\r\n\ Il\ numero\ di\ modi\ in\ cui\ si\ puo'\ completare\ la\ disposizione\r\n\ a\ partire\ da\ una\ scacchiera\ b\ parzialmente\ configurata\r\n\r\n\ numberOfCompletions(\ b\ )\ \:\ int\r\n\r\n\ dove\ k\ regine\ (0\ <\=\ k\ <\ n)\ sono\ collocate\ nelle\ prime\ k\ righe\r\n\ di\ b,\ si\ puo'\ determinare\ a\ partire\ dalle\ configurazioni\r\n\ che\ si\ ottengono\ aggiungendo\ una\ regina\ nella\ riga\ k+1\ in\ tutti\r\n\ i\ modi\ possibili\ (nelle\ posizioni\ che\ non\ sono\ gia'\ minacciate)\r\n\r\n\ for\ (\ int\ j\=1;\ j<\=n;\ j\=j+1\ )\ {\r\n\ if\ (\ \!b.underAttack(i,j)\ )\ {\ ...\ b.addQueen(i,j)\ ...\ }\r\n\ }\r\n\r\n\ calcolando\ ricorsivamente\ per\ ciascuna\ di\ queste\ il\ numero\r\n\ di\ modi\ in\ cui\ si\ puo'\ completare\ la\ disposizione\r\n\r\n\ numberOfCompletions(\ b.addQueen(i,j)\ )\r\n\r\n\ e\ sommando\ i\ valori\ che\ ne\ risultano\r\n\r\n\ count\ \=\ count\ +\ numberOfCompletions(\ ...\ )\r\n\r\n\ Se\ invece\ la\ scacchiera\ rappresenta\ una\ soluzione\ (q\ \=\=\ n)\r\n\ c'e'\ un\ solo\ modo\ (banale)\ di\ completare\ la\ disposizione\:\r\n\ lasciare\ le\ cose\ come\ stanno\!\r\n
+comment3.params=n
+comment3.target=SList\ listOfAllSolutions(int)
+comment3.text=\r\n\ II.\ Lista\ delle\ soluzioni\:\r\n\r\n\ Confronta\ il\ programma\ precedente\!\r\n
+comment4.params=b
+comment4.target=SList\ listOfAllCompletions(Board)
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+comment6.params=lst
+comment6.target=queens.ChessboardView\ visualize(SList)
+comment7.params=n
+comment7.target=queens.ChessboardView\ graphicSolutions(int)
+numComments=8
