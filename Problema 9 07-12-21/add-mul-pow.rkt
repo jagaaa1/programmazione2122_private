@@ -31,3 +31,7 @@
 (define pow
 	(H (lambda (x) 1) mul)
 )
+
+(define boh
+	(H (lambda (x) 1) pow)
+)

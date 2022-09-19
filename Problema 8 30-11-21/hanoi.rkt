@@ -23,38 +23,46 @@
 	)
 )
 
-(define next-move
-	(lambda (current move)
-		(cond
-			((= 1 (car move))
-				(cond
-					((= 2 (cadr move)) (list (list 1 (- (cadr (list-ref current 0)) 1)) (list 2 (+ (cadr (list-ref current 1)) 1)) (list-ref current 2)))
-					((= 3 (cadr move)) (list (list 1 (- (cadr (list-ref current 0)) 1)) (list-ref current 1) (list 3 (+ (cadr (list-ref current 2)) 1))))
-				)
-			)
-			((= 2 (car move))
-				(cond
-					((= 1 (cadr move)) (list (list 1 (+ (cadr (list-ref current 0)) 1)) (list 2 (- (cadr (list-ref current 1)) 1)) (list-ref current 2)))
-					((= 3 (cadr move)) (list (list-ref current 0) (list 2 (- (cadr (list-ref current 1)) 1)) (list 3 (+ (cadr (list-ref current 2)) 1))))
-				)
-			)
-			((= 3 (car move))
-				(cond
-					((= 1 (cadr move)) (list (list 1 (+ (cadr (list-ref current 0)) 1)) (list-ref current 1) (list 3 (- (cadr (list-ref current 2)) 1))))
-					((= 2 (cadr move)) (list (list-ref current 0) (list 2 (+ (cadr (list-ref current 1)) 1)) (list 3 (- (cadr (list-ref current 2)) 1))))
-				)
-			)
-			
-			
-		)
-	)
-)
+(define hanoi-disks 
+ (lambda (n k)      
+  (hanoi-disks-rec n k '(1 0) '(2 0) '(3 0) n)
+  )
+ )
 
-(define hanoi-disks
-	(lambda (n k)
-		(if (= k 0)
-			(list (list 1 n) (list 2 0) (list 3 0))
-			(next-move (hanoi-disks n (- k 1)) (list-ref (hanoi-moves n) (- k 1)))
-		)
-	)
-)
+(define hanoi-disks-rec    
+ (lambda (n k s d t disks) 
+  (let
+   (
+    (l (expt 2 (- n 1)))
+    (h (+ (cadr s) (cadr d) (cadr t)))
+    )
+    (cond
+      ((= h disks) (list s d t))
+      ((< k l) (hanoi-disks-rec (- n 1) k (list (car s) (+ (cadr s) 1)) t d disks))
+      (else (hanoi-disks-rec (- n 1) (- k l) t (list (car d) (+ (cadr d) 1)) s disks))
+      )
+   )
+  )
+ )
+
+(define hanoi-picture 
+ (lambda (n k)     
+  (hanoi-picture-rec n k '(1 0) '(2 0) '(3 0) n (towers-background n))
+  )
+ )
+
+(define hanoi-picture-rec         
+ (lambda (n k s d t disks state) 
+  (let
+   (
+    (l (expt 2 (- n 1)))
+    (h (+ (cadr s) (cadr d) (cadr t)))
+    )
+    (cond
+      ((= h disks) state)
+      ((< k l) (hanoi-picture-rec (- n 1) k (list (car s) (+ (cadr s) 1) ) t d disks (above (disk-image n disks (car s) (cadr s))  state)))
+      (else (hanoi-picture-rec   (- n 1) (- k l) t (list (car d) (+ (cadr d) 1 ) ) s disks (above (disk-image n disks (car d) (cadr d)) state)))
+      )
+   )
+  )
+ )
